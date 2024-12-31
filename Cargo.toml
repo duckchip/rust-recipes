@@ -1,0 +1,37 @@
+[package]
+name = "duckchip-api"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Web framework (Axum for routing)
+axum = { version = "0.7.9" }
+axum-server = { version = "0.7.1" }
+
+# SQLx for database access (PostgreSQL)
+sqlx = { version = "0.8.2", features = ["postgres", "runtime-tokio-native-tls", "json"] }
+
+# Tokio runtime for asynchronous execution
+tokio = { version = "1", features = ["full"] }
+
+# Serde for serializing and deserializing JSON and other formats
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# dotenv for loading environment variables from `.env` files
+dotenv = "0.15"
+
+# Tower for building middleware and extensions (used with Axum)
+tower = "0.5.2"
+
+# sqlx-macros for deriving SQLx query macros
+sqlx-macros = "0.8.2"
+
+# Logging library (optional but recommended for better visibility in your app)
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+# Async runtime for sqlx (this should be used with the tokio feature)
+tokio-postgres = { version = "0.7.12" }
+
+tower-http = "0.6.2"
